@@ -41,7 +41,7 @@ public class DeliveryOrder {
         return database;
     }
 
-    public Object create(String orderID) {
+    public Object createOrder(String orderID) {
         /*
         create Order object with this.attr
         */
@@ -51,7 +51,7 @@ public class DeliveryOrder {
         return order;
     }
 
-    public Object create(String customerID) {
+    public Object createCustomer(String customerID) {
         /*
         create Customer object with this.attr
         */
