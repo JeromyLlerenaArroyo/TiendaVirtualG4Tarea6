@@ -1,47 +1,62 @@
 package edu.patronesdiseno.srp.models;
-import java.util.ArrayList;
+
 import java.util.List;
 
+import edu.patronesdiseno.srp.models.interfaces.IDiscount;
 import edu.patronesdiseno.srp.models.interfaces.IOrderItem;
 
-
 public class Order {
+
     private String id;
-    private Double price;
+    private Double amount;
     private String address;
     private String courier;
-
+    private Double discount;
     private String customer;
-
+    
+    private List<IOrderItem> orderItems;
 
     public List<IOrderItem> getOrderItems() {
-        List<IOrderItem> ordersItems = new ArrayList<>();
+        //List<IOrderItem> ordersItems = new ArrayList<>();
         /*
-            Get logic, ORM, SQL
-        */
-        return ordersItems;
+         * Get logic, ORM, SQL
+         */
+        return orderItems;
     }
 
-    public Double calculateTotalOrder() {
-        List<IOrderItem> ordersItems = this.getOrderItems();
+    public void setOrderItems(List<IOrderItem> orderItems) {
+        this.orderItems = orderItems;
+    }
+
+    public Double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Double amount) {
+        this.amount = amount;
+    }
+
+    public Double calculateTotalOrder(IDiscount iDiscount) {
+        final List<IOrderItem> ordersItems = this.getOrderItems();
 
         Double totalPrice = 0.0;
 
-        for (IOrderItem item : ordersItems) {
+        for (final IOrderItem item : ordersItems) {
             totalPrice += item.getPrice();
+        }
+
+        if (iDiscount != null)   {
+            this.discount = iDiscount.getDiscount();
+            this.amount = totalPrice - this.discount;
+        }
+        else{
+            this.discount = 0.0;
+            this.amount = totalPrice;
         }
 
         return totalPrice;
     }
 
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
 
     public String getAddress() {
         return address;
@@ -74,4 +89,9 @@ public class Order {
     public void setCourier(String courier) {
         this.courier = courier;
     }
+
+    public Double getDiscount() {
+        return discount;
+    }
+
 }

@@ -3,8 +3,9 @@ package edu.patronesdiseno.srp.models.interfaces;
 import edu.patronesdiseno.srp.models.*;
 
 public interface IOrderItem {
-    Order order = null;
-    Product product = null;
+    //Order order = null;
+    //Product product = null;
+    String idProduct = null;
     Integer quantity = null;
     Double price = null;
 
@@ -14,9 +15,13 @@ public interface IOrderItem {
 
     public void setOrder(Order order);
 
-    public Product getProduct();
+    //public Product getProduct();
+
+    public String getIdProduct();
 
     public Integer getQuantity();
+
+    //public void setQuantity();
 
     public Double getPrice();
 

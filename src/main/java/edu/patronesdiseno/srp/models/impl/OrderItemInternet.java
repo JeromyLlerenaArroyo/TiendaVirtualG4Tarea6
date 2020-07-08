@@ -5,10 +5,19 @@ import edu.patronesdiseno.srp.models.Product;
 import edu.patronesdiseno.srp.models.interfaces.IOrderItem;
 
 public class OrderItemInternet implements IOrderItem {
-    private Order order;
-    private Product product;
+    //private Order order;
+    //private Product product;
+    private String idProduct;
     private Integer quantity;
     private Double price;
+
+    public OrderItemInternet(String idProduct,Integer quantity,Double price)  {
+        //this.order = order;
+        //this.product = product;
+        this.idProduct = idProduct;
+        this.quantity = quantity;
+        this.price = price;
+    }
 
     @Override
     public Double calculatePrice() {
@@ -26,26 +35,26 @@ public class OrderItemInternet implements IOrderItem {
     public Double getPrice() {
         // Intenet Promocion
         Double customPrice = 0.0;
-        customPrice = this.price * this.quantity * 0.85;
+        customPrice = this.price * this.quantity * 0.95;
         return customPrice;
-    }
-
-    @Override
-    public Product getProduct() {
-        // TODO Auto-generated method stub
-        return null;
     }
 
     @Override
     public Integer getQuantity() {
         // TODO Auto-generated method stub
-        return null;
+        return this.quantity;
     }
 
     @Override
     public void setOrder(Order order) {
         // TODO Auto-generated method stub
 
+    }
+
+    @Override
+    public String getIdProduct() {
+
+        return this.idProduct;
     }
     
 }

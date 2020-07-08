@@ -6,8 +6,8 @@ import edu.patronesdiseno.srp.models.interfaces.IOrderItem;
 
 public class OrderItemPromocion implements IOrderItem {
 
-    private Order order;
-    private Product product;
+    //private Order order;
+    //private Product product;
     private Integer quantity;
     private Double price;
 
@@ -38,12 +38,6 @@ public class OrderItemPromocion implements IOrderItem {
     }
 
     @Override
-    public Product getProduct() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
     public Integer getQuantity() {
         // TODO Auto-generated method stub
         return null;
@@ -53,6 +47,12 @@ public class OrderItemPromocion implements IOrderItem {
     public void setOrder(Order order) {
         // TODO Auto-generated method stub
 
+    }
+
+    @Override
+    public String getIdProduct() {
+
+        return this.idProduct;
     }
     
 }
