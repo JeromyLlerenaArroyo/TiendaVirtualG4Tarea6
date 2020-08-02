@@ -19,5 +19,11 @@ public class HighProductFactory implements IProductFactory {
         return new PremiumMaintenance();
     }
 
+    @Override
+    public Condition getCondition() {
+
+        return new NewCondition();
+    }
+
     
 }

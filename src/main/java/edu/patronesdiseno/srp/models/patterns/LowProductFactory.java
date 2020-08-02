@@ -19,4 +19,10 @@ public class LowProductFactory implements IProductFactory {
         return new StandardMaintenance();
     }
     
+    @Override
+    public Condition getCondition() {
+
+        return new UsedCondition();
+    }
+
 }
