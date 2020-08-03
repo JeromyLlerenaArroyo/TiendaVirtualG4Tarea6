@@ -4,6 +4,9 @@ import java.util.List;
 
 import edu.patronesdiseno.srp.models.interfaces.IDiscount;
 import edu.patronesdiseno.srp.models.interfaces.IOrderItem;
+import edu.patronesdiseno.srp.models.interfaces.ITransporte;
+import edu.patronesdiseno.srp.models.patterns.OrderState;
+import edu.patronesdiseno.srp.models.patterns.OrderedState;
 
 public class Order {
 
@@ -13,8 +16,12 @@ public class Order {
     private String courier;
     private Double discount;
     private String customer;
-    
+
+    protected ITransporte transporte;
+
     private List<IOrderItem> orderItems;
+
+    private OrderState state;
 
     public List<IOrderItem> getOrderItems() {
         //List<IOrderItem> ordersItems = new ArrayList<>();
@@ -94,4 +101,35 @@ public class Order {
         return discount;
     }
 
+    public void setTransporte(ITransporte transporte){
+        this.transporte = transporte;
+    }
+
+    public ITransporte getTransporte(){
+        return this.transporte;
+    }
+
+    public Double calculaTiempoLlegada(){
+        return null;
+    }
+
+    public void setState(OrderState state){
+        this.state = state;
+    }
+
+    public OrderState getState(){
+        return this.state;
+    }
+
+    public void previousState() {
+        state.prev(this);
+    }
+
+    public void nextState() {
+        state.next(this);
+    }
+
+    public void printStatus() {
+        state.printStatus();
+    }
 }

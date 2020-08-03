@@ -1,9 +1,6 @@
 package edu.patronesdiseno.srp.models.patterns;
 
-import edu.patronesdiseno.srp.models.LineProduct;
-import edu.patronesdiseno.srp.models.LowRangeLineProduct;
-import edu.patronesdiseno.srp.models.Maintenance;
-import edu.patronesdiseno.srp.models.StandardMaintenance;
+import edu.patronesdiseno.srp.models.*;
 
 public class LowProductFactory implements IProductFactory {
 

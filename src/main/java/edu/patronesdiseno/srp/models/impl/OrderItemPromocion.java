@@ -11,6 +11,17 @@ public class OrderItemPromocion implements IOrderItem {
     private Integer quantity;
     private Double price;
 
+    public OrderItemPromocion(String idProduct,Integer quantity,Double price)  {
+        //this.order = order;
+        //this.product = product;
+        this.quantity = quantity;
+        this.price = price;
+    }
+
+    public OrderItemPromocion(){
+
+    }
+
     @Override
     public Double calculatePrice() {
         // TODO Auto-generated method stub

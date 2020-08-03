@@ -19,6 +19,10 @@ public class OrderItemInternet implements IOrderItem {
         this.price = price;
     }
 
+    public OrderItemInternet(){
+
+    }
+
     @Override
     public Double calculatePrice() {
         // TODO Auto-generated method stub

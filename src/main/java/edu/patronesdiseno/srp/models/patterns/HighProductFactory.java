@@ -1,9 +1,6 @@
 package edu.patronesdiseno.srp.models.patterns;
 
-import edu.patronesdiseno.srp.models.HighEndLineProduct;
-import edu.patronesdiseno.srp.models.LineProduct;
-import edu.patronesdiseno.srp.models.Maintenance;
-import edu.patronesdiseno.srp.models.PremiumMaintenance;
+import edu.patronesdiseno.srp.models.*;
 
 public class HighProductFactory implements IProductFactory {
 
