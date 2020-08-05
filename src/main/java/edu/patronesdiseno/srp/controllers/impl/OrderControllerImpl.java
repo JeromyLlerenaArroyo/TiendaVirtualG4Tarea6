@@ -5,7 +5,6 @@ import edu.patronesdiseno.srp.controllers.OrderController;
 import edu.patronesdiseno.srp.models.Delivery;
 import edu.patronesdiseno.srp.models.Moto;
 import edu.patronesdiseno.srp.models.Order;
-import edu.patronesdiseno.srp.models.Product;
 import edu.patronesdiseno.srp.models.impl.OrderItemInternet;
 import edu.patronesdiseno.srp.models.interfaces.IDiscount;
 import edu.patronesdiseno.srp.models.interfaces.IOrderItem;
@@ -59,13 +58,11 @@ public class OrderControllerImpl implements OrderController {
 
         order.calculateTotalOrder(discount);
 
-        // Bridge pattern
-        // get best vehicle logic - return Vahiculo
         Moto moto1 = new Moto();
-
         FastOrder fOrder = new FastOrder();
         fOrder.setTransporte(moto1);
         System.out.println(fOrder.calculaTiempoLlegada());
+
 
         System.out.println("Log Status Order");
         OrderedState ordered = new OrderedState();
@@ -76,6 +73,7 @@ public class OrderControllerImpl implements OrderController {
         fOrder.nextState();
         fOrder.printStatus();
 
+        
         orderRepository.create(order);
 
         context.status(HttpStatus.CREATED_201)

@@ -6,7 +6,6 @@ import edu.patronesdiseno.srp.models.interfaces.IDiscount;
 import edu.patronesdiseno.srp.models.interfaces.IOrderItem;
 import edu.patronesdiseno.srp.models.interfaces.ITransporte;
 import edu.patronesdiseno.srp.models.patterns.OrderState;
-import edu.patronesdiseno.srp.models.patterns.OrderedState;
 
 public class Order {
 
