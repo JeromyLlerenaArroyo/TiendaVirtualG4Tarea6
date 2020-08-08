@@ -4,6 +4,7 @@ import edu.patronesdiseno.srp.config.Paths;
 import edu.patronesdiseno.srp.controllers.OrderController;
 import edu.patronesdiseno.srp.models.Delivery;
 import edu.patronesdiseno.srp.models.Moto;
+import edu.patronesdiseno.srp.models.Auto;
 import edu.patronesdiseno.srp.models.Order;
 import edu.patronesdiseno.srp.models.impl.OrderItemInternet;
 import edu.patronesdiseno.srp.models.interfaces.IDiscount;
@@ -58,9 +59,10 @@ public class OrderControllerImpl implements OrderController {
 
         order.calculateTotalOrder(discount);
 
-        Moto moto1 = new Moto();
+        //Moto moto1 = new Moto();
+        Auto auto1 = new Auto();
         FastOrder fOrder = new FastOrder();
-        fOrder.setTransporte(moto1);
+        fOrder.setTransporte(auto1);
         System.out.println(fOrder.calculaTiempoLlegada());
 
 
