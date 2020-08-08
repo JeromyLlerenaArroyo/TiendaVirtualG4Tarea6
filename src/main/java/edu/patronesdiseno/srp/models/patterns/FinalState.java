@@ -2,13 +2,13 @@ package edu.patronesdiseno.srp.models.patterns;
 
 import edu.patronesdiseno.srp.models.Order;
 
-public class DeliveredState implements OrderState {
+public class FinalState implements OrderState {
 
-    public DeliveredState(){}
+    public FinalState(){}
 
     @Override
     public void next(Order order) {
-        order.setState(new ReceivedState());
+        System.out.println("This order has already finished.");
     }
 
     @Override
@@ -18,6 +18,6 @@ public class DeliveredState implements OrderState {
 
     @Override
     public void printStatus(){
-        System.out.println("Delivered!");
+        System.out.println("Finished!");
     }
 }

@@ -2,22 +2,22 @@ package edu.patronesdiseno.srp.models.patterns;
 
 import edu.patronesdiseno.srp.models.Order;
 
-public class DeliveredState implements OrderState {
+public class PaiddedState implements OrderState {
 
-    public DeliveredState(){}
+    public PaiddedState(){}
 
     @Override
     public void next(Order order) {
-        order.setState(new ReceivedState());
+        order.setState(new DeliveredState());
     }
 
     @Override
     public void prev(Order order) {
-        order.setState(new PaiddedState());
+        order.setState(new OrderedState());
     }
 
     @Override
     public void printStatus(){
-        System.out.println("Delivered!");
+        System.out.println("Order Paidded!");
     }
 }

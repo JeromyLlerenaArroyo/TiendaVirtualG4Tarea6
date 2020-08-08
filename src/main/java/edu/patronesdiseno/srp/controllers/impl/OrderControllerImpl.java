@@ -72,6 +72,10 @@ public class OrderControllerImpl implements OrderController {
         fOrder.printStatus();
         fOrder.nextState();
         fOrder.printStatus();
+        fOrder.nextState();
+        fOrder.printStatus();
+        fOrder.nextState();
+        fOrder.printStatus();
 
         
         orderRepository.create(order);
