@@ -6,8 +6,10 @@ import edu.patronesdiseno.srp.models.interfaces.IDiscount;
 import edu.patronesdiseno.srp.models.interfaces.IOrderItem;
 import edu.patronesdiseno.srp.models.interfaces.ITransporte;
 import edu.patronesdiseno.srp.models.patterns.OrderState;
+import edu.patronesdiseno.srp.models.interfaces.IOrderItemAggregate;
+import edu.patronesdiseno.srp.models.patterns.OrderItemIterator;
 
-public class Order {
+public class Order implements IOrderItemAggregate{
 
     private String id;
     private Double amount;
@@ -131,4 +133,11 @@ public class Order {
     public void printStatus() {
         state.printStatus();
     }
+
+    @Override
+    public OrderItemIterator createIterator()
+    {
+        return new OrderItemIterator(orderItems);
+    }
+
 }

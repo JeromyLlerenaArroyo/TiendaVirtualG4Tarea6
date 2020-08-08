@@ -50,6 +50,16 @@ public class OrderControllerImpl implements OrderController {
         items.add(oi2);
         order.setOrderItems(items);
 
+        OrderItemIterator iterador = order.createIterator();
+
+        System.out.println("Detalle de iteración");
+
+        while(iterador.hasNext()) {
+            IOrderItem o = iterador.next();
+
+            System.out.println("Precio: " + o.getPrice());
+        }
+
         DiscountFactory factoryDiscount = new DiscountFactory();
         IDiscount discount = factoryDiscount.createDiscount(DiscountFactory.DISCOUNT_COUPON);
         //IDiscount discount = factoryDiscount.createDiscount(DiscountFactory.DISCOUNT_ANNIVERSARY);
